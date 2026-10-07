@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "Order": {
+      "title": "Order",
+      "description": "Customer orders for raw meal powder",
+      "type": "object",
+      "properties": {
+        "orderNumber": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "customerName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "customerPhone": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "address": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "addressDetail": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "deliveryNote": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "productName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "unitPrice": {
+          "type": "number"
+        },
+        "totalPrice": {
+          "type": "number"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "enum": ["bank", "card", "kakaopay", "naverpay", "tosspay"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING_PAYMENT", "PAID", "PREPARING", "SHIPPED", "COMPLETED", "CANCELLED"]
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderNumber",
+        "customerName",
+        "customerPhone",
+        "address",
+        "quantity",
+        "totalPrice",
+        "status",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Collection of customer orders placed on the store"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "자연온 생식 - 국내산 50가지 곡물과 채소",
+  "description": "국내산 50가지 자연 곡물과 채소로 정직하게 만든 생식. 하루 한 잔으로 간편하게 챙기는 든든하고 고소한 식사.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
